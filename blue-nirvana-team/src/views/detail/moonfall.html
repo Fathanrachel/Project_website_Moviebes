@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/src/assets/css/style.css">
+  <link rel="stylesheet" href="/src/assets/css/homepage.css">
+  <link rel="stylesheet" href="/src/assets/css/detail.css">
+  <link rel="stylesheet" href="/src/assets/css/sidebar.css">
+  <link rel="stylesheet" href="/src/assets/css/sidekanan.css">
+  <link rel="stylesheet" href="/src/assets/css/mobile.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- fonts google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/img/svg/moviebes.svg" type="image/x-icon">
+  <title>Movibes - Moonfall</title>
+</head>
+
+<body>
+
+  <!-- Navigasi di Sisi Kiri -->
+  <div class="container">
+    <!-- Tombol Hamburger -->
+    <div class="mobile-navbar row m-auto">
+      <div class="col-2">
+        <button class="btn btn-primary bg-dark hamburger-btn" onclick="toggleSidebar()">☰</button>
+      </div>
+      <div class="col-10 mt-3 logo">
+        <a href="#" class="logo d-flex justify-content-center">
+          <img src="/img/svg/moviebes.svg" alt="" class="logo">
+        </a>
+      </div>
+    </div>
+    <div class="side-nav bg-dark text-white">
+      <button class="btn btn-primary bg-dark hamburger-btn-2" onclick="toggleSidebar()">☰</button>
+      <div class="list-item">
+        <a href="/src/views/homepage.html" class="logo d-flex justify-content-center">
+          <img src="/img/svg/moviebes.svg" alt="" class="logo">
+        </a>
+      </div>
+      <div class="mobile-profile d-flex justify-content-end">
+        <i class="ri-notification-line text-white-50" style="font-size: 30pt"></i>
+        <img src="/img/cloud-clouds.gif" alt="Profil Pengguna" class="rounded-circle mt-2 mx-3" width="40px"
+          height="40px">
+      </div>
+      <ul>
+        <li class="list-group-item">
+          <a href="/src/views/homepage.html" class="d-flex">
+            <i class="ri-home-line mx-2"></i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/src/views/movies.html" class="d-flex active">
+            <i class="ri-movie-line mx-2"></i>
+            <p>Movies</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/src/views/homepage.html#tvseries" class="d-flex">
+            <i class="ri-tv-2-line mx-2"></i>
+            <p>TV Series</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/src/views/homepage.html#upcoming" class="d-flex">
+            <i class="ri-calendar-2-line mx-2"></i>
+            <p>Upcoming</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/index.html" class="d-flex mt-5">
+            <i class="ri-logout-box-r-line mx-2"></i>
+            <p>Logout</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Konten Utama di Tengah -->
+  <div class="main-content">
+    <div class="search-bar">
+      <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-between">
+          <span class="search-icon">
+            <i class="ri-search-line"></i>
+          </span>
+          <input class="form-control w-75 bg-dark text-light placeholder-white rounded-5" type="search"
+            placeholder="     Search" aria-label="Search" id="search" onkeyup="search()">
+          <div class="side-right d-flex justify-content-end">
+            <i class="ri-notification-line text-white-50" style="font-size: 30pt"></i>
+            <img src="/img/cloud-clouds.gif" alt="Profil Pengguna" class="rounded-circle mt-2 mx-3" width="40px"
+              height="40px">
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="w-100 trailer" style="width: 100%">
+      <iframe src="https://www.youtube.com/embed/ivIwdQBlS10?si=qZZw7TZiCXMj6GWl" title="Trailer"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen class="rounded-4" width="100%" height="500px"></iframe>
+    </div>
+
+    <!-- jika screen sedang full -->
+    <div class="full-screen-detail mt-4 text-white w-75">
+      <div class="d-flex justify-content-between">
+        <p style="font-size: 1.4375rem;">Moonfall ~ 2022 ~ PG +13 ~ 2h 10m</p>
+        <div class="badges">
+          <span class="btn btn-outline-light text-bg-dark fw-bold rounded-5 mx-3">Adventure</span>
+          <span class="btn btn-outline-light text-bg-dark fw-bold rounded-5">Action</span>
+        </div>
+      </div>
+      <p>
+        <span class="d-flex my-3 sinopsis">Rating: <span class="fw-bold mx-1 text-warning">5.1</span> | 95k</span>
+        A mysterious force knocks the moon from its orbit and sends it hurtling on a collision course toward earth.
+      </p>
+      <p class="border-bottom-detail">Director : <span class="fw-bold" style="color: #3DD2CC;">Roland Emmerich</span>
+      </p>
+      <p class="border-bottom-detail">Writers : <span class="fw-bold" style="color: #3DD2CC;">Roland Emmerich, Harald
+          Kloser, Spenser Cohen</span></p>
+      <p class="border-bottom-detail">Stars : <span class="fw-bold" style="color: #3DD2CC;">Halle Berry, Patrick Wilson,
+          John Bradley</span></p>
+      <div class="d-flex">
+        <p class="btn text-bg-info text-white fw-bold">Top rated movie #80</p>
+        <p class="btn text-bg-dark text-white fw-bold w-75 mx-2 text-start">Awards 9
+          nomination</p>
+      </div>
+      <p style="font-size: 1.5rem; font-weight:bold">Top Cast : </p>
+      <div class="mx-2 d-flex text-center flex-wrap">
+        <div class="pemain" style="margin-right: 1rem;">
+          <img src="/img/pemain/moonfall/halle_berry.jpg" alt="tom cruise" class="rounded-circle" height="150px"
+            width="150px">
+          <p>Halle Berry</p>
+        </div>
+        <div class="pemain" style="margin-right: 1rem;">
+          <img src="/img/pemain/moonfall/patrick_wilson.jpg" alt="Jennifer Connelly" class="rounded-circle"
+            height="150px" width="150px">
+          <p>Patrick Wilson</p>
+        </div>
+        <div class="pemain">
+          <img src="/img/pemain/moonfall/john_bradley.jpg" alt="Miles Teller" class="rounded-circle" height="150px"
+            width="150px">
+          <p>John Bradley</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pilihan Genre di Sisi Kanan -->
+  <div class="genre-selection-detail">
+    <div class="d-flex justify-content-evenly p-2" style="margin-left: -1.5rem;">
+      <i class="ri-heart-line text-white-50 fs-3"></i>
+      <i class="ri-share-line text-white-50 fs-3"></i>
+      <i class="ri-bookmark-line text-white-50 fs-3"></i>
+    </div>
+    <div class="btn btn-success text-white fw-semibold w-100 mt-3">
+      <i class="ri-ticket-2-line"></i>
+      <span class="tiket1"> See Showtimes</span>
+    </div>
+    <div class="btn btn-outline-info text-white fw-semibold w-100 mt-2">
+      <i class="ri-list-check"></i>
+      <span class="tiket2">More Watch Options</span>
+    </div>
+
+    <!-- bagian film selanjutnya -->
+    <div class="d-flex mt-3">
+      <a href="/src/views/detail/topGun.html" style="margin-right: .5rem;">
+        <img src="/img/movies/top_gun.png" class="rounded-3" alt="Moon Fall" width="100px" height="auto">
+      </a>
+      <a href="/src/views/detail/blackAdam.html">
+        <img src="/img/movies/black_adam.png" alt="Black Adam" width="100px" height="auto">
+      </a>
+    </div>
+  </div>
+
+  <script src="/src/assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.main-content .full-screen-detail p {
+  font-size: 1.2rem;
+}
+
+.main-content .full-screen-detail .border-bottom-detail {
+  border-bottom: 1px solid rgba(232, 232, 232, 0.25);
+  padding: .5rem 0;
+}
+
+.genre-selection-detail {
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 590px;
+  right: 20px;
+  width: 250px;
+  overflow-y: auto;
+}

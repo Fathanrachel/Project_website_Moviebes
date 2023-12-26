@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/src/assets/css/style.css">
+  <link rel="stylesheet" href="/src/assets/css/homepage.css">
+  <link rel="stylesheet" href="/src/assets/css/sidebar.css">
+  <link rel="stylesheet" href="/src/assets/css/sidekanan.css">
+  <link rel="stylesheet" href="/src/assets/css/mobile.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- fonts google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/img/svg/moviebes.svg" type="image/x-icon">
+  <title>Movies</title>
+</head>
+
+<body>
+
+  <!-- Navigasi di Sisi Kiri -->
+  <div class="container">
+    <!-- Tombol Hamburger -->
+    <div class="mobile-navbar row m-auto">
+      <div class="col-2">
+        <button class="btn btn-primary bg-dark hamburger-btn" onclick="toggleSidebar()">☰</button>
+      </div>
+      <div class="col-10 mt-3 logo">
+        <a href="#" class="logo d-flex justify-content-center">
+          <img src="/img/svg/moviebes.svg" alt="" class="logo">
+        </a>
+      </div>
+    </div>
+    <div class="side-nav bg-dark text-white">
+      <button class="btn btn-primary bg-dark hamburger-btn-2" onclick="toggleSidebar()">☰</button>
+      <div class="list-item">
+        <a href="/src/views/homepage.html" class="logo d-flex justify-content-center">
+          <img src="/img/svg/moviebes.svg" alt="" class="logo">
+        </a>
+      </div>
+      <div class="mobile-profile d-flex justify-content-end">
+        <i class="ri-notification-line text-white-50" style="font-size: 30pt"></i>
+        <img src="/img/cloud-clouds.gif" alt="Profil Pengguna" class="rounded-circle mt-2 mx-3" width="40px"
+          height="40px">
+      </div>
+      <ul>
+        <li class="list-group-item">
+          <a href="/src/views/homepage.html" class="d-flex">
+            <i class="ri-home-line mx-2"></i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="#movies" class="d-flex active">
+            <i class="ri-movie-line mx-2"></i>
+            <p>Movies</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="#tvseries" class="d-flex">
+            <i class="ri-tv-2-line mx-2"></i>
+            <p>TV Series</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="#upcoming" class="d-flex">
+            <i class="ri-calendar-2-line mx-2"></i>
+            <p>Upcoming</p>
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/index.html" class="d-flex mt-5">
+            <i class="ri-logout-box-r-line mx-2"></i>
+            <p>Logout</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Konten Utama di Tengah -->
+  <div class="main-content">
+    <div class="search-bar">
+      <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-between">
+          <span class="search-icon">
+            <i class="ri-search-line"></i>
+          </span>
+          <input class="form-control w-75 bg-dark text-light placeholder-white rounded-5" type="search"
+            placeholder="     Search" aria-label="Search" id="search" onkeyup="search()">
+          <div class="side-right d-flex justify-content-end">
+            <i class="ri-notification-line text-white-50" style="font-size: 30pt"></i>
+            <img src="/img/cloud-clouds.gif" alt="Profil Pengguna" class="rounded-circle mt-2 mx-3" width="40px"
+              height="40px">
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- jika screen sedang full -->
+    <div class="full-screen mt-4">
+      <div class="d-flex justify-content-between w-75">
+        <h2 class="text-white mb-3">Trending</h2>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div class="row row-cols-1 row-cols-lg-4 row-cols-xs-2 w-75 d-flex mx-2">
+        <!-- Card Film -->
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 5%;">House Of Dragon
+              (2022)</p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class="ri-star-fill rating"><span class="text-white fw-bold"> 8.8</span></i>
+              <img src="/img/movies/house_of_dragon.png" alt="house of dragon" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4">
+            </div>
+            <a href="/src/views/detail/topGun.html"
+              class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%">Watch</a>
+            <p class="text-white fw-bold position-absolute" style="top: 80%; left: 25%;">Top Gun (2022)</p>
+          </div>
+          <a href="/src/views/detail/topGun.html">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class="ri-star-fill rating"><span class="text-white fw-bold"> 8.5</span></i>
+              <img src="/img/movies/top_gun.png" alt="top gun" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 25%;">Nope (2022)</p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class="ri-star-fill rating"><span class="text-white fw-bold"> 7.0</span></i>
+              <img src="/img/movies/nope.png" alt="nope" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 20%;">Sandman (2022)</p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class="ri-star-fill rating"><span class="text-white fw-bold"> 7.8</span></i>
+              <img src="/img/movies/sadnman.png" alt="sandman" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="upcoming" class=" d-flex justify-content-between w-75 mt-4">
+        <h2 class="text-white mb-3">Upcoming</h2>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div class="row row-cols-1 row-cols-lg-4 row-cols-xs-2 w-75 d-flex mx-2">
+        <!-- Card Film -->
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 25%;">vesper (2022)</p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class="ri-star-fill rating"><span class="text-white fw-bold"> 7.3</span></i>
+              <img src="/img/movies/vessper.png" alt="vesper" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 20%;">Barbarian (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class="ri-star-fill rating"><span class="text-white fw-bold"> 7.4</span></i>
+              <img src="/img/movies/barbarian.png" alt="barbarian" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="/src/views/detail/blackAdam.html"
+              class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 15%;">Black Adam (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 6.2</span></i>
+              <img src="/img/movies/black_adam.png" alt="black adam" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 20%;">Al Kamen (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 7.4</span></i>
+              <img src="/img/movies/al_kamen.png" alt="al kamen" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="tvseries" class="d-flex justify-content-between w-75 mt-4">
+        <h2 class="text-white mb-3">TV Series</h2>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div class="row row-cols-1 row-cols-lg-4 row-cols-xs-2 w-75 d-flex mx-2">
+        <!-- Card Film -->
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 5%;">Al The Rings Of
+              Power (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 6.8</span></i>
+              <img src="/img/movies/rings_of_power.png" alt="rings of fire" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 20%;">She Hulk (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 5.0</span></i>
+              <img src="/img/movies/she_hulk.png" alt="she hulk" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 2%;">Stranger Things
+              Season 4 (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 8.7</span></i>
+              <img src="/img/movies/stranger_things.png" alt="stranger things" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 14%;">Moon Knight (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 7.3</span></i>
+              <img src="/img/movies/moon_knight.png" alt="moon knight" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between w-75 mt-4">
+        <h2 class="text-white mb-3">Popular Movies</h2>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div class="row row-cols-1 row-cols-lg-4 row-cols-xs-2 w-75 d-flex mx-2">
+        <!-- Card Film -->
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 10%;">The Gray Men (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 6.5</span></i>
+              <img src="/img/movies/the_gray_men.png" alt="the gray men" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 20%;">Day Shift (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 6.1</span></i>
+              <img src="/img/movies/day_shift.png" alt="day shift" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 14%;">Purple Heart (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 6.7</span></i>
+              <img src="/img/movies/purple_heart.png" alt="purple hearth" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+        <div class="col-3 mt-2 movie">
+          <div class="position-absolute rounded-4 cover">
+            <div class="layout bg-dark rounded-4"></div>
+            <a href="#" class="position-absolute btn btn-primary text-white fw-bold text-center"
+              style="top: 50%; left: 32%;">Watch</a>
+            <p class="text-white fw-bold position-absolute text-center" style="top: 80%; left: 25%;">Orphan (2022)
+            </p>
+          </div>
+          <a href="#">
+            <div class="d-flex justify-content-end" style="width: 200px;">
+              <i class=" ri-star-fill rating"><span class="text-white fw-bold"> 6.0</span></i>
+              <img src="/img/movies/oprhan.png" alt="orphan" width="200px" height="315px">
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- jika sedang dalam keadaan mobile -->
+    <div class="mobile-screen" style="margin-top: -3rem;">
+      <div class="d-flex justify-content-between w-75 mt-4">
+        <h5 class="text-white mb-3">Trending</h5>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div id="trending" class="carousel carousel-light slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  8.8</span></i>
+            </div>
+            <img src="/img/movies/house_of_dragon.png" alt="house of dragon" class="d-flex m-auto" width="200px"
+              height="315px">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  8.5</span></i>
+            </div>
+            <a href="/src/views/detail/topGun.html">
+              <img src="/img/movies/top_gun.png" class="d-block m-auto" alt="top gun" width="200px" height="315px">
+            </a>
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  7.0</span></i>
+            </div>
+            <img src="/img/movies/nope.png" class="d-block m-auto" alt="nope" width="200px" height="315px">
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  7.8</span></i>
+            </div>
+            <img src="/img/movies/sadnman.png" class="d-block m-auto" alt="sandman" width="200px" height="315px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#trending" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#trending" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="d-flex justify-content-between w-75 mt-4">
+        <h5 class="text-white mb-3">Upcoming</h5>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div id="mobileUpcoming" class="carousel carousel-light slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  7.3</span></i>
+            </div>
+            <img src="/img/movies/vessper.png" class="d-block m-auto" alt="vesper" width="200px" height="315px">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  7.4</span></i>
+            </div>
+            <img src="/img/movies/barbarian.png" class="d-block m-auto" alt="barbarian" width="200px" height="315px">
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  6.2</span></i>
+            </div>
+            <a href="/src/views/detail/topGun.html">
+              <img src="/img/movies/black_adam.png" class="d-block m-auto" alt="black adam" width="200px"
+                height="315px">
+            </a>
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  7.4</span></i>
+            </div>
+            <img src="/img/movies/al_kamen.png" class="d-block m-auto" alt="al kamen" width="200px" height="315px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mobileUpcoming" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mobileUpcoming" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="d-flex justify-content-between w-75 mt-4">
+        <h5 class="text-white mb-3">TV Series</h5>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div id="mobileTvSeries" class="carousel carousel-light slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  6.8</span></i>
+            </div>
+            <img src="/img/movies/rings_of_power.png" class="d-block m-auto" alt="rings of fire" width="200px"
+              height="315px">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  5.0</span></i>
+            </div>
+            <img src="/img/movies/she_hulk.png" class="d-block m-auto" alt="she hulk" width="200px" height="315px">
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  8.7</span></i>
+            </div>
+            <img src="/img/movies/stranger_things.png" class="d-block m-auto" alt="strager things" width="200px"
+              height="315px">
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  7.3</span></i>
+            </div>
+            <img src="/img/movies/moon_knight.png" class="d-block m-auto" alt="moon knight" width="200px"
+              height="315px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mobileTvSeries" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mobileTvSeries" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="d-flex justify-content-between w-75 mt-4">
+        <h5 class="text-white mb-3">Popular Movies</h5>
+        <p class="text-white-50 see-all">See All</p>
+      </div>
+      <div id="popular" class="carousel carousel-light slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  6.5</span></i>
+            </div>
+            <img src="/img/movies/the_gray_men.png" class="d-block m-auto" alt="the gray man" width="200px"
+              height="315px">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  6.1</span></i>
+            </div>
+            <img src="/img/movies/day_shift.png" class="d-block m-auto" alt="day shift" width="200px" height="315px">
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  6.7</span></i>
+            </div>
+            <img src="/img/movies/purple_heart.png" class="d-block m-auto" alt="purple hearth" width="200px"
+              height="315px">
+          </div>
+          <div class="carousel-item">
+            <div class="m-auto text-end bg-dark" style="width: 100px;">
+              <i class="position-absolute ri-star-fill rating"><span class="text-white fw-bold">
+                  6.0</span></i>
+            </div>
+            <img src="/img/movies/oprhan.png" class="d-block m-auto" alt="orphan" width="200px" height="315px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#popular" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#popular" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Pilihan Genre di Sisi Kanan -->
+  <div class="genre-selection">
+    <div class="d-flex justify-content-between p-2" style="margin-left: -1.5rem;">
+      <h4 class="text-white">Categories</h4>
+      <p class="text-white-50 mt-1" style="font-size: 14px;">
+        <a href="#" id="uncheckCategories">Uncheck all</a>
+      </p>
+    </div>
+    <div class="check-box">
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Action</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Adventure</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Animated</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Comedy</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Crime</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Fantasy</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+    </div>
+
+    <div class="d-flex justify-content-between p-2 mt-3" style="margin-left: -1.5rem;">
+      <h4 class="text-white">Services</h4>
+      <p class="text-white-50 mt-2" style="font-size: 14px;">
+        <a href="#" id="uncheckServices">Uncheck all</a>
+      </p>
+    </div>
+    <div class="check-box">
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Netflix</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Prime Video</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">Disney+</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <div class="d-flex justify-content-between p-2">
+        <p class="fw-semibold">HBO Max</p>
+        <input class="mb-2 form-check-input" type="checkbox" name="action" id="action">
+      </div>
+      <div class="w-100 border-bottom-side"></div>
+      <script src="/src/assets/js/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
